@@ -260,9 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function hardDrop() {
     while (!collide(board, { shape: currentPiece.shape, x: currentPiece.x, y: currentPiece.y + 1, id: currentPiece.id, cat: currentPiece.cat })) {
       currentPiece.y++;
-      score += 2;
     }
-    updateUI();
     lockPiece();
   }
 
@@ -339,9 +337,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (collide(board, currentPiece)) {
           currentPiece.y--;
           lockPiece();
-        } else {
-          score += 1;
-          updateUI();
         }
         dropCounter = 0;
         break;
@@ -392,10 +387,8 @@ document.addEventListener('DOMContentLoaded', function () {
       currentPiece.y--;
       lockPiece();
     } else {
-      score += 1;
-      updateUI();
+      dropCounter = 0;
     }
-    dropCounter = 0;
   });
   setupMobileButton('btnRotate', function () {
     rotate(currentPiece);
