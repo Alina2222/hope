@@ -228,8 +228,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var points = [0, 100, 300, 500, 800];
       score += points[linesCleared] * level;
       lines += linesCleared;
-      level = Math.floor(lines / 10) + 1;
-      dropInterval = Math.max(100, 1000 - (level - 1) * 80);
+      level = Math.floor(lines / 5) + 1;
+      dropInterval = Math.max(100, 1000 - (level - 1) * 100);
       updateUI();
     }
   }
