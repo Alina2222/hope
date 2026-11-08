@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тетрис</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="game-wrapper">
+    <h1 class="game-title">Тетрис</h1>
+
+    <div class="game-container">
+      <!-- Левая панель -->
+      <div class="panel panel--left">
+        <div class="panel__block">
+          <h3 class="panel__label">Счет</h3>
+          <p class="panel__value" id="score">0</p>
+        </div>
+        <div class="panel__block">
+          <h3 class="panel__label">Уровень</h3>
+          <p class="panel__value" id="level">1</p>
+        </div>
+        <div class="panel__block">
+          <h3 class="panel__label">Линии</h3>
+          <p class="panel__value" id="lines">0</p>
+        </div>
+      </div>
+
+      <!-- Игровое поле -->
+      <div class="board-container">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div class="board-overlay" id="overlay">
+          <p class="overlay__text" id="overlayText">Нажмите Играть</p>
+        </div>
+      </div>
+
+      <!-- Правая панель -->
+      <div class="panel panel--right">
+        <div class="panel__block">
+          <h3 class="panel__label">Следующая</h3>
+          <canvas id="nextCanvas" width="120" height="120"></canvas>
+        </div>
+        <div class="panel__block">
+          <button class="btn btn--play" id="playBtn">Играть</button>
+        </div>
+        <div class="panel__block">
+          <button class="btn btn--pause" id="pauseBtn">Пауза</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Управление -->
+    <div class="controls">
+      <div class="controls__item">
+        <span class="controls__key">← →</span>
+        <span class="controls__desc">Движение</span>
+      </div>
+      <div class="controls__item">
+        <span class="controls__key">↑</span>
+        <span class="controls__desc">Поворот</span>
+      </div>
+      <div class="controls__item">
+        <span class="controls__key">↓</span>
+        <span class="controls__desc">Ускорить</span>
+      </div>
+      <div class="controls__item">
+        <span class="controls__key">Пробел</span>
+        <span class="controls__desc">Сброс</span>
+      </div>
+    </div>
+
+    <!-- Мобильное управление -->
+    <div class="mobile-controls" id="mobileControls">
+      <button class="mobile-btn" id="btnLeft">◀</button>
+      <button class="mobile-btn" id="btnRotate">🔄</button>
+      <button class="mobile-btn" id="btnDown">▼</button>
+      <button class="mobile-btn" id="btnDrop">⏬</button>
+      <button class="mobile-btn" id="btnRight">▶</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
